@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Girardi — Productos para el hogar</title>
+
+    <!--
+      Política de seguridad de contenido. Encierra de dónde puede cargar la app y a
+      dónde puede mandar datos: si algún día entra un script inyectado, no puede
+      llevarse la sesión a un servidor ajeno porque connect-src sólo deja Supabase.
+
+      script-src va sin 'unsafe-inline': el único script en línea es el del tema, y
+      se habilita por su hash. Si cambiás ese bloque de abajo, recalculá el hash
+      con scripts/auditar-seguridad.mjs o el navegador va a bloquearlo.
+
+      Nota: frame-ancestors, HSTS y X-Frame-Options NO funcionan desde un <meta>,
+      sólo como encabezado HTTP. Están en public/_headers, que aplica cuando el
+      sitio se sirve desde Cloudflare o Netlify (no desde GitHub Pages).
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: blob:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'sha256-KrNDOtih483+Cymhe7RTL8Q2iQPLjO+Cf3ispvctjko='; connect-src 'self'; form-action 'self'; upgrade-insecure-requests"
+    />
+
+    <!--
+      «Tipo aplicación» (19-09): con el manifiesto, «Agregar a pantalla de
+      inicio» en el celular crea un ícono propio y abre la app sin la barra
+      del navegador. No es una app de la tienda: es la misma página, instalada.
+      Rutas relativas a propósito: también sirve bajo un BASE_PATH.
+    -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0176c2" />
+    <link rel="apple-touch-icon" href="assets/icono-192.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icono-192.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0&display=block"
+      rel="stylesheet"
+    />
+
+    <!-- Aplica el tema antes del primer pintado para que no haya un flash de blanco. -->
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('girardi.theme') || 'light';
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/girardi-demo/assets/index-DIygimEA.js"></script>
+    <link rel="stylesheet" crossorigin href="/girardi-demo/assets/index-1p8OONIX.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
